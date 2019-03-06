@@ -7,26 +7,26 @@ namespace GoldFibMetric
     {
         static void Main(string[] args)
         {
-            var fib=new List<int>   {1,1};
-            var au=new List<decimal>{0,1};
+            var fs=new List<int>{1,1};
+            var gr=new List<decimal?>{null,1};
 
             for(int i=2;i<32;i++)
             {
-                fib.Add(fib[i-1]+ fib[i-2]);
-                au.Add( fib[i-1]/(fib[i-2]*1M));
+                fs.Add(          fs[i-1] +fs[i-2]);
+                gr.Add(((decimal)fs[i-1])/fs[i-2]);
             }
 
             Console.WriteLine($"{"Golden Ratio",30} | {"Fibonacci Miles",15} | Kilometers");
 
-            for(int i=0;i<fib.Count;i++)//1 Mile = 1.609344 Kilometers
-                Console.WriteLine($"{au[i],30} | {fib[i],15} | {fib[i]*1.609344}");
+            for(int i=0;i<fs.Count;i++)//1 Mile = 1.609344 Kilometers
+                Console.WriteLine($"{gr[i],30} | {fs[i],15} | {fs[i]*1.609344}");
        }
     }
 }
 
 /*
                               Golden Ratio | Fibonacci Miles | Kilometers
-                                         0 |               1 | 1.609344
+                                           |               1 | 1.609344
                                          1 |               1 | 1.609344
                                          1 |               2 | 3.218688
                                          2 |               3 | 4.828032
