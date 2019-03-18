@@ -19,12 +19,19 @@
 		<script src="qkit.js"></script><!-- https://raw.githubusercontent.com/fahadhaidari/qKit/master/qkit.js -->
 		<script src="life.js"></script>
 		<br/>
-		<div align="center" class="flatbutton" style="background-color:#FFC0C0;" onclick="Random5050Habitat();RenderCurrentPhase();">Reset to 50/50 Random</div>
+		<div align="center" class="flatbutton" style="background-color:#FFC0C0;" 
+			onclick="random5050Habitat();renderCurrentPhase();">Reset to 50/50 Random</div>
 		<br/>
-		<div align="center" class="flatbutton" style="background-color:#FFFFC0;" onclick="PopulateOneWalker();RenderCurrentPhase();">Populate One Walker</div>
+		<div align="center" class="flatbutton" style="background-color:#FFFFC0;" 
+			onclick="populateOneWalker();renderCurrentPhase();">Populate One Walker</div>
 		<br/>
-		<div align="center" class="flatbutton" style="background-color:#C0FFC0;" onclick="ComputeNextPhase();phase=(phase+1)%2;RenderCurrentPhase();">Step</div>
+		<div align="center" class="flatbutton" style="background-color:#C0FFC0;" 
+			onclick="computeNextPhase();phase++;renderCurrentPhase();">Step</div>
 		<br/>
-		<div align="center" class="flatbutton" style="background-color:#C0C0FF;" onclick="if(auto){auto=false;this.innerHTML='Run';}else{auto=true;this.innerHTML='Pause';}">Run</div>
+		<div align="center" class="flatbutton" style="background-color:#C0C0FF;" 
+			onclick="if(auto){auto=false;this.innerHTML='Run';}else{auto=true;this.innerHTML='Pause';}">Pause</div>
+		<br/>
+		<div align="center" class="flatbutton" style="background-color:#D0D0D0;" 
+			onclick="if(scroll){scroll=false;this.innerHTML='Scroll';phase%=2;renderCurrentPhase();}else{scroll=true;this.innerHTML='Center';phase%=2;}">Center</div>
 	</body>
 </html>
